@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birth Weight Form</title>
+    <style>
+        /* General and body styles */
+        body, html {
+            margin: 0; padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #e8f0fe 60%, #fff1fe 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* disables scroll */
+        }
+        .center-wrap {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            max-width: 700px;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .baby-anim {
+            width: 90px;
+            height: 90px;
+            margin: 0 8px;
+            animation: float 2.6s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0); }
+        }
+        .form-card {
+            background: #f5eaff;
+            padding: 20px 20px 20px 20px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(90,70,255,0.08);
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #722fd3;
+            font-size: 1.24rem;
+            margin-bottom: 14px;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        label {
+            color: #5d3c9a;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 2px;
+            width: 100%;
+            text-align: left;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 7px;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: 1px solid #c4b3ee;
+            margin-bottom: 6px;
+            background: #fff;
+            box-sizing: border-box;
+            transition: border 0.2s;
+        }
+        input[type="number"]:focus {
+            border: 1.5px solid #9333ea;
+            outline: none;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px 0;
+            background: #9333ea;
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 2px 7px rgba(140,80,255,0.12);
+            transition: background 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: #722fd3;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 650px) {
+            body, html {
+                overflow: auto; /* enable scroll on very small devices */
+            }
+            .center-wrap {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .baby-anim {
+                width: 70px;
+                height: 70px;
+                margin: 10px 0;
+            }
+            .form-card {
+                max-width: 95vw;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="center-wrap">
+        <!-- Left baby -->
+        <svg class="baby-anim" viewBox="0 0 110 110" fill="none">
+            <ellipse cx="55" cy="40" rx="30" ry="27" fill="#ffe0e6"/>
+            <path d="M44,62 Q55,70 66,62" stroke="#d9819c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <ellipse cx="45" cy="45" rx="3" ry="4" fill="#ad5389"/>
+            <ellipse cx="65" cy="45" rx="3" ry="4" fill="#ad5389"/>
+            <ellipse cx="55" cy="90" rx="30" ry="18" fill="#dbeafe"/>
+            <ellipse cx="35" cy="78" rx="6" ry="3" fill="#ffe0e6"/>
+            <ellipse cx="75" cy="78" rx="6" ry="3" fill="#ffe0e6"/>
+            <path d="M55 34 Q56 31, 59 33" stroke="#d9819c" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <!-- Form -->
+        <form class="form-card" action="/predict" method="post">
+            <h1>Predict Birth Weight Of Your Child:</h1>
+            <label for="gestation">Gestation</label>
+            <input type="number" name="gestation" required>
+            <label for="parity">Parity</label>
+            <input type="number" name="parity" required>
+            <label for="age">Age</label>
+            <input type="number" name="age" required>
+            <label for="height">Height</label>
+            <input type="number" name="height" required>
+            <label for="weight">Weight</label>
+            <input type="number" name="weight" required>
+            <label for="smoke">Smoke</label>
+            <input type="number" name="smoke" required>
+            <button type="submit">Predict Birth Weight</button>
+        </form>
+        <!-- Right baby -->
+        <svg class="baby-anim" viewBox="0 0 110 110" fill="none">
+            <ellipse cx="55" cy="40" rx="30" ry="27" fill="#ffe0e6"/>
+            <path d="M44,62 Q55,70 66,62" stroke="#d9819c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <ellipse cx="45" cy="45" rx="3" ry="4" fill="#ad5389"/>
+            <ellipse cx="65" cy="45" rx="3" ry="4" fill="#ad5389"/>
+            <ellipse cx="55" cy="90" rx="30" ry="18" fill="#dbeafe"/>
+            <ellipse cx="35" cy="78" rx="6" ry="3" fill="#ffe0e6"/>
+            <ellipse cx="75" cy="78" rx="6" ry="3" fill="#ffe0e6"/>
+            <path d="M55 34 Q56 31, 59 33" stroke="#d9819c" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+    </div>
+</body>
+</html>

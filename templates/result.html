@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #dce6ff 60%, #fff7ff 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .result-card {
+            background: #f0e1ff;
+            border-radius: 20px;
+            box-shadow: 0 6px 24px rgba(115,91,255,0.15);
+            padding: 40px 32px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #5a2db6;
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+        .score {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #3a1d7c;
+            margin-bottom: 28px;
+            letter-spacing: 1.1px;
+        }
+        button {
+            background: #6e3ce9;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 30px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 3px 12px rgba(110,60,233,0.3);
+            transition: background 0.25s;
+        }
+        button:hover {
+            background: #4b2083;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-card">
+        <h1>Predicted Birth Weight</h1>
+        <div class="score">{{ prediction }}</div>
+        <button onclick="window.location.href='/'">← Back to Form</button>
+    </div>
+</body>
+</html>
